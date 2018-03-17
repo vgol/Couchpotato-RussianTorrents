@@ -11,11 +11,11 @@ from couchpotato.core.media.movie.providers.base import MovieProvider
 log = CPLog(__name__)
 
 
-class Rutor(TorrentProvider, MovieProvider):
+class rutor(TorrentProvider, MovieProvider):
 
-    baseurl = 'http://rutor.is/'
+    baseurl = 'http://vip-tor.org/'
     urls = {
-        'test': 'http://rutor.is',
+        'test': 'http://vip-tor.org/',
         'detail': baseurl + 'torrent/%s',
         'search': baseurl + 'search/0/0/100/8/%s',
         'download': baseurl + 'download/%s',
@@ -42,6 +42,7 @@ class Rutor(TorrentProvider, MovieProvider):
                 if not result_table:
                     log.debug("<div id=index> not found in html:")
                     log.debug(html)
+
                 result_table = result_table.find('table')
                 if not result_table:
                     log.debug('No table results from rutor')
